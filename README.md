@@ -22,13 +22,13 @@ Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os at
 Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os atributos necessários para representação de um pacote do tipo: **IPv6**.
 ## Referencias
 ### Classes e Métodos Importantes
-* **PacketArrivalEventHandler**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
-* **LibPcapLiveDevice**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
-* **PacketCapture**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
-* **LibPcapLiveDeviceList**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
-* **PacketCapture.GetPacket**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
-* **PacketCapture.GetPacket**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
-* **Packet.ParsePacket**: Texto texto texto texto texto texto texto texto texto texto texto texto texto.
+* **PacketArrivalEventHandler**: Função delegadora de função, para o evento de chegada de pacotes.
+* **PacketCapture**: Classe com o pacote capturado bruto.
+* **PacketCapture.GetPacket**: Método que devolve o pacote capturado bruto.
+* **LibPcapLiveDeviceList**: Classe que captura os pacotes driver de rede dispositivo.  
+* **LibPcapLiveDeviceList.Instance**: Atributo que captura e disponibiliza os driver de rede do dispositivo.  
+* **LibPcapLiveDevice**: Classe de driver de rede.
+* **Packet.ParsePacket**: Método que devolve o pacote capturado pré processado.
 ### Links
 * https://sharppcap.sourceforge.net/htmldocs/index.html
 * https://sharppcap.sourceforge.net/htmldocs/SharpPcap.LibPcap/index.html
