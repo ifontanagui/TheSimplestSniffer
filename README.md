@@ -20,6 +20,13 @@ Classe abstrata que herda a classe: *BaseClass* e espera um parâmetro ***T***, 
 Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os atributos necessários para representação de um pacote do tipo: **IPv4**.
 ### IPv6
 Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os atributos necessários para representação de um pacote do tipo: **IPv6**.
+
+<img src="https://raw.githubusercontent.com/GuilhermeFontana/TheSimplestSniffer/refs/heads/Development/Docs/Images/ClassDiagram.png" alt="Diagrama de classes" width="1000" height="500" />
+
+## Fluxograma de Classes
+
+<img src="https://raw.githubusercontent.com/GuilhermeFontana/TheSimplestSniffer/refs/heads/Development/Docs/Images/Fluxogramas.png" alt="Diagrama de classes" width="1000" height="300" />
+
 ## Referencias
 ### Classes e Métodos Importantes
 * **PacketArrivalEventHandler**: Função delegadora de função, para o evento de chegada de pacotes.
