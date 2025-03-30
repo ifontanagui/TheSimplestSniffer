@@ -25,7 +25,7 @@ Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os at
 
 ## Fluxograma de Classes
 
-<img src="https://raw.githubusercontent.com/GuilhermeFontana/TheSimplestSniffer/refs/heads/Development/Docs/Images/Fluxogramas.png" alt="Diagrama de classes" width="1000" height="300" />
+<img src="https://raw.githubusercontent.com/GuilhermeFontana/TheSimplestSniffer/refs/heads/Development/Docs/Images/Fluxogramas.png?token=GHSAT0AAAAAADBAAJKAUCAIF3VWB6PWYLJGZ7IVFYQ" alt="Diagrama de classes" width="1000" height="300" />
 
 ## Referencias
 ### Classes e Métodos Importantes
