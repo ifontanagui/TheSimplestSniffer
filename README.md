@@ -27,6 +27,73 @@ Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os at
 
 <img src="https://raw.githubusercontent.com/GuilhermeFontana/TheSimplestSniffer/refs/heads/Development/Docs/Images/Fluxogramas.png?token=GHSAT0AAAAAADBAAJKAUCAIF3VWB6PWYLJGZ7IVFYQ" alt="Diagrama de classes" width="1000" height="300" />
 
+## Exemplos de Saídas
+### IPv4 e TCP
+```
+################################################ IPv4 ################################################
+                           From: 140.82.113.26:443 - To: 192.168.0.96:61081
+                                      PacketLength - 52
+                                     PayloadLength - 32
+                                        Identifier - 56981
+                                        TimeToLive - 46
+                                               Payload
+                                              Type - Tcp
+                                    SequenceNumber - 2359957511
+                              AcknowledgmentNumber - 2405531688
+                                        WindowSize - 74
+                                             Flags
+                                             Ugent - 0
+                                    Acknowledgment - 1
+                                              Push - 0
+                                             Reset - 0
+                                               Syn - 0
+                                               Fin - 0
+```
+### IPv4 e UDP
+```
+################################################ IPv4 ################################################
+                         From: 192.168.0.128:52004 - To: 255.255.255.255:6667
+                                      PacketLength - 290
+                                     PayloadLength - 270
+                                        Identifier - 20104
+                                        TimeToLive - 255
+                                               Payload
+                                              Type - Udp
+                                          Checksum - 51178
+```
+### IPv6 e TCP
+```
+################################################ IPv6 ################################################
+ From: 2804:14c:7d80:8e82:88b2:c49b:ffc:25cf:61041 - To: 2606:50c0:8000::154:443
+                                      PacketLength - 61
+                                     PayloadLength - 21
+                                      TrafficClass - 0
+                                          HopLimit - 64
+                                               Payload
+                                              Type - Tcp
+                                    SequenceNumber - 235794486
+                              AcknowledgmentNumber - 841923879
+                                        WindowSize - 255
+                                             Flags
+                                             Ugent - 0
+                                    Acknowledgment - 1
+                                              Push - 0
+                                             Reset - 0
+                                               Syn - 0
+                                               Fin - 0
+```
+### IPv6 e UDP
+```
+################################################ IPv6 ################################################
+                 From: 2800:3f0:4001:817::200a:443 - To: 2804:14c:7d80:8e82:88b2:c49b:ffc:25cf:63977
+                                      PacketLength - 74
+                                     PayloadLength - 34
+                                      TrafficClass - 0
+                                          HopLimit - 55
+                                               Payload
+                                              Type - Udp
+                                          Checksum - 30114
+```
 ## Referencias
 ### Classes e Métodos Importantes
 * **PacketArrivalEventHandler**: Função delegadora de função, para o evento de chegada de pacotes.
