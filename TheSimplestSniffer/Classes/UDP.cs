@@ -5,15 +5,14 @@ namespace TheSimplestSniffer.Classes
 {
     internal class UDP : Payload
     {        
-        public ushort Checksum { get; set; }
+        public int Length { get; set; }
 
 
-        public UDP(ushort checksum, ProtocolType type, ushort sourcePort, ushort destinationPort) : base(type, sourcePort, destinationPort)
+        public UDP(ProtocolType type, ushort sourcePort, ushort destinationPort, ushort checksum, int length)
+            : base(type, sourcePort, destinationPort, checksum)
         {
-            Checksum = checksum;
+            Length = length;
         }
-
-
 
         public override string ToString()
         {
@@ -21,7 +20,8 @@ namespace TheSimplestSniffer.Classes
 
             sb.Append(base.ToString());
 
-            sb.AppendLine($"{$"Checksum".PadLeft(50)} - {Checksum.ToString()}");
+            sb.AppendLine($"{$"Length".PadLeft(colLength)} - {this.Length.ToString()}");
+            sb.AppendLine($"{$"Checksum".PadLeft(colLength)} - {this.Checksum.ToString()}");
 
             return sb.ToString();
         }
