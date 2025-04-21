@@ -210,10 +210,10 @@
     <br/>
     <div style="display: flex;gap: 50px; flex-direction: row;display-content:center">
       <div>
-        <img src="https://www.gta.ufrj.br/ensino/eel879/trabalhos_vf_2009_2/priscilla/images/cabecalho.jpg" alt="Diagrama de classes" width="100%" height="500" />
+        <img src="https://arquivo.devmedia.com.br/REVISTAS/infra/imagens/03/03_IPv6/image005.png" alt="IPv46 Headers" width="100%" height="500" />
       </div>
       <div>
-        <img src="https://dhg1h5j42swfq.cloudfront.net/2023/10/23191655/imagem-inicial-4.png" alt="Diagrama de classes" width="100%" height="500" />
+        <img src="https://dhg1h5j42swfq.cloudfront.net/2023/10/23191655/imagem-inicial-4.png" alt="TCP_UDP Headers" width="100%" height="500" />
       </div>
     </div>
   </div>
