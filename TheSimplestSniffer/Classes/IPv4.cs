@@ -7,7 +7,7 @@ namespace TheSimplestSniffer.Classes
 {
     internal class IPv4<T> : Protocol<T> where T : Payload
     {
-        public int HeaderLenth {  get; set; }
+        public int HeaderLength {  get; set; }
         public int TypeOfService {  get; set; }
         public int TotalLength {  get; set; }
         public ushort Identifier { get; set; }
@@ -18,11 +18,11 @@ namespace TheSimplestSniffer.Classes
         public byte[] FragmentFlagsArray { get; set; }
 
         public IPv4(IPVersion version, IPAddress sourceAddress, IPAddress destinationAddress,
-                    int headerLenth, int typeOfService, int totalLength, ushort identifier, int fragmentOffset, int timeToLive, ProtocolType protocol, ushort headerChecksum, int flags,
+                    int headerLength, int typeOfService, int totalLength, ushort identifier, int fragmentOffset, int timeToLive, ProtocolType protocol, ushort headerChecksum, int flags,
                     T payload)
             : base(version, sourceAddress, destinationAddress, payload)
         {
-            HeaderLenth = headerLenth;
+            HeaderLength = headerLength;
             TypeOfService = typeOfService;
             TotalLength = totalLength;
             Identifier = identifier;
@@ -50,9 +50,9 @@ namespace TheSimplestSniffer.Classes
 
             sb.Append(base.ToString());
 
-            sb.AppendLine($"{$"IHL".PadLeft(colLength)} - {this.HeaderLenth.ToString()}");
+            sb.AppendLine($"{$"IHL".PadLeft(colLength)} - {this.HeaderLength.ToString()}");
             sb.AppendLine($"{$"TOS".PadLeft(colLength)} - {this.TypeOfService.ToString()}");
-            sb.AppendLine($"{$"TotalLenth".PadLeft(colLength)} - {this.TotalLength.ToString()}");
+            sb.AppendLine($"{$"TotalLength".PadLeft(colLength)} - {this.TotalLength.ToString()}");
             sb.AppendLine($"{$"Identification".PadLeft(colLength)} - {this.Identifier.ToString()}");
 
 
@@ -64,7 +64,7 @@ namespace TheSimplestSniffer.Classes
             sb.AppendLine($"{$"Fragment Offset".PadLeft(colLength)} - {this.FragmentOffset.ToString()}");
             sb.AppendLine($"{$"TTL".PadLeft(colLength)} - {this.TimeToLive.ToString()}");
             sb.AppendLine($"{$"Checksum".PadLeft(colLength)} - {this.HeaderChecksum.ToString()}");
-            sb.AppendLine($"{$"Protocol".PadLeft(colLength)} - {this.HeaderLenth.ToString()}");
+            sb.AppendLine($"{$"Protocol".PadLeft(colLength)} - {this.HeaderLength.ToString()}");
 
 
             sb.AppendLine("Payload".PadLeft(colLength+4));
