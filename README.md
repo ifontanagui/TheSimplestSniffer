@@ -1,56 +1,99 @@
+
 <div>
-  <strong style="font-size: 40px">TheSimplestSniffer</strong>
-  <br>
-  <br>
-  <div style="display=flex; flex-direction:row">
-      O TheSimplestSniffer é um network sniffer de terminal que, utilizando os pacotes: &nbsp; <a href="https://www.nuget.org/packages/SharpPcap">SharpPcap (*v6.3.0*)</a> e <a href="https://www.nuget.org/packages/packetdotnet/">PacketDotNet (*v1.4.7*)</a>, captura e apesenta pacotes <strong>IPv4</strong> e <strong>IPv6</strong>, com protocolos <strong>TCP</strong> e <strong>UPD</strong>
-  </div>
+  <strong style="font-size: 40px"> 🔍 TheSimplestSniffer</strong>
   <br/>
+  <br/>
+TheSimplestSniffer – Sniffer de Rede Simples em Terminal
+TheSimplestSniffer é uma ferramenta de análise de pacotes de rede (sniffer), desenvolvida para uso em terminal. Ela permite capturar e exibir informações detalhadas de pacotes que trafegam pela rede, com suporte aos protocolos <strong>IPv4, IPv6, TCP e UDP</strong>. A aplicação foi desenvolvida utilizando as bibliotecas <strong>SharpPcap (v6.3.0)</strong> e <strong>PacketDotNet (v1.4.7)</strong>, amplamente utilizadas em .NET para captura e análise de pacotes.
+
+<br/>
+
+Ele é um programa de terminal que observa o que está acontecendo na sua rede em tempo real. Ele capta e mostra as mensagens (chamadas de "pacotes") que os computadores, celulares e outros dispositivos enviam e recebem pela internet. Como um detetive da rede, olha para todos os detalhes do tráfego para mostrar quem está se comunicando com quem, qual tipo de mensagem está sendo enviada, e como essas mensagens estão estruturadas.
+
+<br />
+
+O TheSimplestSniffer é um programa simples, direto e muito útil para entender o que está acontecendo dentro da sua rede. Ele mostra tudo de forma clara no terminal, sendo perfeito para aprender, investigar e explorar como a internet realmente funciona.
+
+  
+  <div>
+    <br/>
+    <hr/>
+    <br/>
+    <strong style="font-size: 25px">Como Utilizar</strong>
+    
+1. Execute o Sniffer (<strong>TheSimplestSniffer.exe</strong>)
+
+2. Assim que o programa iniciar, ele vai listar automaticamente todos os dispositivos de rede disponíveis no seu computador, e pedir que você escolha um.
+
+3. Digite o número do dispositivo desejado e pressione Enter.
+```
+Dispositivos disponíveis para captura:
+1) ...
+2) ...
+3) ...
+Selecione um dispositivo:
+```
+4. O sniffer começará imediatamente a capturar os pacotes de rede que passam pela interface escolhida. Você verá no terminal várias informações detalhadas.
+
+5. Enquanto o sniffer estiver ativo, você pode continuar usando a internet normalmente. A ferramenta vai capturar tudo o que passar pela interface de rede.
+
+6. Para encerrar o processo de captura, basta pressionar:
+```
+Ctrl + C
+```
+  </div>
+
   <br/>
   <hr>
   <div style="display: flex;center;flex-direction:column">
-    <strong style="font-size: 25px">Classes</strong>
-    <br/>
-    <div style="display: flex;gap: 50px; flex-direction: row;display-content:center">
-      <img src="Docs\Images\Fluxogramas.png" alt="Diagrama de classes" width="60%" height="600px"/>
-      <div style="width: 40%">
-        <strong style="font-size: 17px">Program</strong>
-        <p>Classe responsável pela inicialização do programa.</p>
-        <strong style="font-size: 17px">App</strong>
-        <p>Classe responsável pela captura e exposição dos pacotes.</p>
-        <strong style="font-size: 17px">Make</strong>
-        <p>Classe utilitária estática responsável por instanciar objetos baseados nos pacotes de rede recebidos.</p>
-        <hr>
-        <strong style="font-size: 17px">BaseClass</strong>
-        <p>Classe base abstrata de todas as outras.</p>
-        <strong style="font-size: 17px">Payload e Protocol</strong>
-        Herdam de BaseClass.
-        </strong style="font-size: 17px">TCP e UDP</strong>
-        <p>Herdam de Protocol<T>, onde T é uma subclasse de Payload.</p>
-        <strong style="font-size: 17px">IPv4 e IPv6</strong>
-        <p>Esta classe, que herdas os atributos da classe ***Protocol***, adicionando os atributos necessários para representação de um pacote do tipo: **IPv6**.</p>
-      </div>
+    <strong style="font-size: 25px">📦 Arquitetura e Classes</strong>
+    <br/>    
+  A estrutura do sistema é organizada de forma modular e orientada a objetos, promovendo clareza e facilidade de manutenção. Abaixo, um resumo das principais classes:
+
+  🔹 Program
+  Classe principal do projeto. Responsável por inicializar a aplicação e delegar o controle para a captura de pacotes.
+
+  🔹 App
+  Controla o fluxo principal da aplicação. Realiza a captura dos pacotes da rede e os exibe no terminal, formatados de maneira clara e organizada.
+
+  🔹 Make
+  Classe utilitária com métodos estáticos usados para instanciar objetos representando pacotes de rede a partir dos dados capturados.
+
+  🔹 BaseClass
+  Classe abstrata que serve como base para todas as outras classes do sistema. Define atributos e métodos comuns.
+
+  🔹 Protocol e Payload
+  Herdam de BaseClass. Protocol representa protocolos da camada de rede (como IPv4 ou IPv6), enquanto Payload representa a carga útil, geralmente relacionada à camada de transporte (TCP/UDP).
+
+  🔹 TCP e UDP
+  São subclasses de Protocol. Cada uma representa os respectivos protocolos de transporte, contendo informações específicas como portas, checksums e flags.
+
+  🔹 IPv4 e IPv6
+  Herdam de Protocol e adicionam atributos específicos de cada versão do protocolo IP, como TOS, TTL, FlowLabel, etc.
+  <div>
+    <strong style="font-size: 18px">Diagramas</strong>
+    <br />
+    <br />
+    <div style="display: flex;gap: 20px; flex-direction: row;display-content:center">
+      <img src="Docs\Images\Fluxogramas.png" alt="Diagrama de classes" width="27%" height="600px"/>
+      <img src="Docs\Images\ClassDiagram.png" alt="Diagrama de classes" width="73%" height="600px" />
     </div>
   </div>
-  <br/>
-  <br/>
-  <div style="display: flex;center;flex-direction:column">
-    <strong style="font-size: 25px">Diagrama</strong>
-    <br/>
-    <img src="Docs\Images\ClassDiagram.png" alt="Diagrama de classes" width="100%" height="700" />
-  </div>
-  <br/>
+  <div>
   <br/>
   <hr/>
-  <br/>
+  <br />
+  </div>
 
   <div width="80%">
-    <strong style="font-size: 25px">Exemplos de Saída</strong>
+    <strong style="font-size: 25px">📤 Exibição das Informações, com Exemplos</strong>
+   
+O sniffer é capaz de imprimir uma representação textual detalhada dos pacotes, com divisões bem formatadas e legíveis no terminal.
     <br/>
-    <br/>
-    <strong style="font-size: 18px">IPv4 e TCP</strong>
-    <br/>
-    <br/>
+    
+<strong style="font-size: 18px">📄 IPv4 com TCP</strong>
+
+Exibe informações detalhadas como endereços IP de origem/destino, portas, identificador de fragmentos, TTL, além das flags TCP como SYN, ACK, e Sequence Number.
 
 ``` 
 ########################################################## IPv4 ##########################################################
@@ -84,11 +127,10 @@
                                                          Syn - 1
                                                          Fin - 0
 ```
-  <br/>
-  <br/>
-  <strong style="font-size: 18px">IPv4 e UDP</strong>
-  <br/>
-  <br/>
+
+<strong style="font-size: 18px">📄 IPv4 com UDP</strong>
+
+Similar ao exemplo acima, mas para o protocolo UDP. Mostra portas de origem/destino, comprimento e checksum, com menos campos em relação ao TCP.
 
 ```
 ########################################################## IPv4 ##########################################################
@@ -111,11 +153,10 @@
                                                       Length - 270
                                                     Checksum - 19488
 ```
-  <br/>
-  <br/>
-  <strong style="font-size: 18px">IPv6 e TCP</strong>
-  <br/>
-  <br/>
+
+<strong style="font-size: 18px">📄 IPv6 com TCP</strong>
+
+Inclui os campos exclusivos do IPv6 como Traffic Class, Flow Label e Hop Limit, além das informações detalhadas do TCP.
 
 ```
 ########################################################## IPv6 ##########################################################
@@ -142,11 +183,10 @@
                                                          Syn - 0
                                                          Fin - 0
 ```
-  <br/>
-  <br/>
-  <strong style="font-size: 18px">IPv6 e UDP</strong>
-  <br/>
-  <br/>
+
+<strong style="font-size: 18px">📄 IPv6 com UDP</strong>
+
+Assim como os demais, mostra os campos do cabeçalho IPv6 e as informações essenciais do protocolo UDP.
 
 ```
 ########################################################## IPv6 ##########################################################
@@ -163,7 +203,6 @@
                                                     Checksum - 62084
 ```
   </div>
-
   <div>
     <div>
       <br/>
